@@ -24,6 +24,8 @@ function App() {
           onChange={(e) => handleChange(e)}
         ></input>
         <button onClick={() => setLetters('')}>Clear</button>
+        <button>Save</button>
+        <button>View All</button>
       </form>
     </div>
   );
