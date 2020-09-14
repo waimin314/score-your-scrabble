@@ -23,6 +23,7 @@ function App() {
           autoFocus
           onChange={(e) => handleChange(e)}
         ></input>
+        <button onClick={() => setLetters('')}>Clear</button>
       </form>
     </div>
   );
