@@ -2,7 +2,16 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const MAX_TILES = 10;
   const [letters, setLetters] = useState('');
+
+  const handleChange = (e) => {
+    if (e.target.value.length <= MAX_TILES) {
+      setLetters(e.target.value);
+    } else {
+      console.log('Max Limit reached');
+    }
+  };
 
   return (
     <div>
@@ -10,8 +19,9 @@ function App() {
       <form>
         <input
           type='text'
+          value={letters}
           autoFocus
-          onChange={(e) => setLetters(e.target.value)}
+          onChange={(e) => handleChange(e)}
         ></input>
       </form>
     </div>
