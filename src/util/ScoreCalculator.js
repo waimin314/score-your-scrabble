@@ -18,7 +18,7 @@ const getPointOf = (letter) => {
   return point;
 };
 
-const calcualateScore = (word) => {
+const calculateScore = (word) => {
   let score = 0;
   word.split('').forEach((letter) => {
     let point = getPointOf(letter);
@@ -27,4 +27,4 @@ const calcualateScore = (word) => {
   return score;
 };
 
-export { calcualateScore };
+export { calculateScore };

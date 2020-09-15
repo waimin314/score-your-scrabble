@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { calcualateScore } from './util/ScoreCalculator';
+import { calculateScore } from './util/ScoreCalculator';
 
 function App() {
   const MAX_TILES = 10;
@@ -10,7 +10,7 @@ function App() {
     if (e.target.value.length <= MAX_TILES) {
       let word = e.target.value.toUpperCase();
       setLetters(word);
-      setScore(calcualateScore(word));
+      setScore(calculateScore(word));
     } else {
       console.log('Max Limit reached');
     }

@@ -1,6 +1,6 @@
-import { calcualateScore } from './util/ScoreCalculator';
+import { calculateScore } from './util/ScoreCalculator';
 
 it('Calculate score', () => {
-  expect(calcualateScore('EXCITING')).toEqual(18);
-  expect(calcualateScore('QUIZZIFY')).toEqual(41);
+  expect(calculateScore('EXCITING')).toEqual(18);
+  expect(calculateScore('QUIZZIFY')).toEqual(41);
 });
