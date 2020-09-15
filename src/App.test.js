@@ -1,9 +1,6 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import { calcualateScore } from './util/ScoreCalculator';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+it('Calculate score', () => {
+  expect(calcualateScore('EXCITING')).toEqual(18);
+  expect(calcualateScore('QUIZZIFY')).toEqual(41);
 });
