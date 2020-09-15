@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/score-your-scrabble/static/css/main.fe9c2f52.chunk.css",
+    "main.js": "/score-your-scrabble/static/js/main.86f6fda5.chunk.js",
+    "main.js.map": "/score-your-scrabble/static/js/main.86f6fda5.chunk.js.map",
+    "runtime-main.js": "/score-your-scrabble/static/js/runtime-main.400965b6.js",
+    "runtime-main.js.map": "/score-your-scrabble/static/js/runtime-main.400965b6.js.map",
+    "static/js/2.a062469b.chunk.js": "/score-your-scrabble/static/js/2.a062469b.chunk.js",
+    "static/js/2.a062469b.chunk.js.map": "/score-your-scrabble/static/js/2.a062469b.chunk.js.map",
+    "index.html": "/score-your-scrabble/index.html",
+    "precache-manifest.045741a6ac6f581dc7fd92e26397e330.js": "/score-your-scrabble/precache-manifest.045741a6ac6f581dc7fd92e26397e330.js",
+    "service-worker.js": "/score-your-scrabble/service-worker.js",
+    "static/css/main.fe9c2f52.chunk.css.map": "/score-your-scrabble/static/css/main.fe9c2f52.chunk.css.map",
+    "static/js/2.a062469b.chunk.js.LICENSE.txt": "/score-your-scrabble/static/js/2.a062469b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.400965b6.js",
+    "static/js/2.a062469b.chunk.js",
+    "static/css/main.fe9c2f52.chunk.css",
+    "static/js/main.86f6fda5.chunk.js"
+  ]
+}
