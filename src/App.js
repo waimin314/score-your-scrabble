@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import { calcualateScore } from './util/ScoreCalculator';
 
 function App() {
   const MAX_TILES = 10;
   const [letters, setLetters] = useState('');
+  const [score, setScore] = useState(0);
 
   const handleChange = (e) => {
     if (e.target.value.length <= MAX_TILES) {
-      setLetters(e.target.value.toUpperCase());
+      let word = e.target.value.toUpperCase();
+      setLetters(word);
+      setScore(calcualateScore(word));
     } else {
       console.log('Max Limit reached');
     }
@@ -24,6 +28,7 @@ function App() {
           onChange={(e) => handleChange(e)}
         ></input>
       </form>
+      <h2>Score : {score}</h2>
       <div className='flex space-x-5'>
         <button
           className='w-20 h-8 rounded-md bg-pink-700 text-white'
