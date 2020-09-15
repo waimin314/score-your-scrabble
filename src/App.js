@@ -6,7 +6,7 @@ function App() {
 
   const handleChange = (e) => {
     if (e.target.value.length <= MAX_TILES) {
-      setLetters(e.target.value);
+      setLetters(e.target.value.toUpperCase());
     } else {
       console.log('Max Limit reached');
     }
