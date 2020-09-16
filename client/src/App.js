@@ -21,7 +21,7 @@ function App() {
   };
 
   const saveEntry = () => {
-    API.post('entries', {}).then((res, err) => {
+    API.post('entries', { word: letters, score }).then((res, err) => {
       console.log(res);
       console.log(res.data);
     });
