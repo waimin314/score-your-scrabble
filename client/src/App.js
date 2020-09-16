@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import { calculateScore } from './util/ScoreCalculator';
+import axios from 'axios';
 
 function App() {
   const MAX_TILES = 10;
+  const BASE_URL = 'http://localhost:5000/';
   const [letters, setLetters] = useState('');
   const [score, setScore] = useState(0);
+
+  const API = axios.create({ baseURL: BASE_URL });
 
   const handleChange = (e) => {
     if (e.target.value.length <= MAX_TILES) {
@@ -14,6 +18,20 @@ function App() {
     } else {
       console.log('Max Limit reached');
     }
+  };
+
+  const saveEntry = () => {
+    API.post('entries', {}).then((res, err) => {
+      console.log(res);
+      console.log(res.data);
+    });
+  };
+
+  const getAllEntries = () => {
+    API.get('entries').then((res, err) => {
+      console.log(res);
+      console.log(res.data);
+    });
   };
 
   return (
@@ -36,10 +54,16 @@ function App() {
         >
           Clear
         </button>
-        <button className='w-20 h-8 rounded-md bg-indigo-700 text-white'>
+        <button
+          className='w-20 h-8 rounded-md bg-indigo-700 text-white'
+          onClick={saveEntry}
+        >
           Save
         </button>
-        <button className='w-20 h-8 rounded-md bg-indigo-700 text-white'>
+        <button
+          className='w-20 h-8 rounded-md bg-indigo-700 text-white'
+          onClick={getAllEntries}
+        >
           View All
         </button>
       </div>
