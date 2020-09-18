@@ -1,5 +1,8 @@
 const express = require('express');
 const cors = require('cors');
+const dotenv = require('dotenv');
+
+dotenv.config({ path: './config/config.env' });
 
 const app = express();
 
@@ -15,8 +18,7 @@ app.post('/entries', (req, res) => {
   res.sendStatus(200);
 });
 
-const PORT = 5000;
-
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`listening at ${PORT}`);
 });
