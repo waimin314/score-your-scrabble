@@ -32,12 +32,24 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/entries', (req, res) => {
-  res.send('Hola Mola');
+  res.json(allEntries);
 });
 
 app.post('/entries', (req, res) => {
   console.log(req.body);
-  res.sendStatus(200);
+  client
+    .db(DB_NAME)
+    .collection(COLLECTION_NAME)
+    .insertOne(req.body)
+    .then(() => {
+      allEntries.push(req.body);
+      console.log(`successfully added ${req.body.word}`);
+    })
+    .catch((err) => {
+      console.log(`Error adding to Database. ${err.message}`);
+    });
+
+  res.sendStatus(201);
 });
 
 const PORT = process.env.PORT;
