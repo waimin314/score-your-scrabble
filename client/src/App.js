@@ -39,7 +39,7 @@ function App() {
       <h1 className='h-10 mt-10 text-2xl'>{letters}</h1>
       <form>
         <input
-          className='my-3 p-2'
+          className='my-3 p-2 border border-gray-800 rounded-sm'
           type='text'
           value={letters}
           autoFocus
