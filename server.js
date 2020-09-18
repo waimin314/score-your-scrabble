@@ -1,8 +1,30 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const MongoClient = require('mongodb').MongoClient;
+
+const DB_NAME = 'Scrabble';
+const COLLECTION_NAME = 'Entries';
+let allEntries = undefined;
 
 dotenv.config({ path: './config/config.env' });
+
+const client = new MongoClient(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+client.connect((err) => {
+  if (err) {
+    console.log(`Error establishing connection to MongoDB ${err.message}`);
+    process.exit(1);
+  }
+  client
+    .db(DB_NAME)
+    .collection(COLLECTION_NAME)
+    .find()
+    .toArray()
+    .then((results) => (allEntries = results));
+});
 
 const app = express();
 
