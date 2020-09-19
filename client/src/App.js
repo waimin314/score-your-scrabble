@@ -7,6 +7,7 @@ function App() {
   const BASE_URL = 'http://localhost:5000/';
   const [letters, setLetters] = useState('');
   const [score, setScore] = useState(0);
+  const [allEntries, setAllEntries] = useState([]);
 
   const API = axios.create({ baseURL: BASE_URL });
 
@@ -29,8 +30,19 @@ function App() {
 
   const getAllEntries = () => {
     API.get('entries').then((res, err) => {
-      console.log(res);
       console.log(res.data);
+      setAllEntries(res.data);
+    });
+  };
+
+  const renderAllEntries = () => {
+    return allEntries.map((entry) => {
+      console.log(`${entry.word} : ${entry.score}`);
+      return (
+        <li>
+          {entry.word} : {entry.score}
+        </li>
+      );
     });
   };
 
@@ -67,6 +79,7 @@ function App() {
           View All
         </button>
       </div>
+      <div>{renderAllEntries()}</div>
     </div>
   );
 }
