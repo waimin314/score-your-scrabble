@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { calculateScore, getPointOf } from './util/ScoreCalculator';
 import Tile from './components/Tile';
+import PlaceholderTile from './components/PlaceholderTile';
 
 function App() {
   const MAX_TILES = 10;
@@ -26,6 +27,17 @@ function App() {
     return letters.split('').map((letter) => {
       return <Tile letter={letter} point={getPointOf(letter)} />;
     });
+  };
+
+  const renderPlaceholderTiles = () => {
+    let tmpTiles = [];
+    let numTilesToRender = MAX_TILES - letters.length;
+
+    for (let i = 0; i < numTilesToRender; i++) {
+      tmpTiles.push(<PlaceholderTile />);
+    }
+
+    return tmpTiles;
   };
 
   const saveEntry = () => {
@@ -56,7 +68,10 @@ function App() {
   return (
     <div className='flex flex-col items-center '>
       {/* <h1 className='h-10 mt-10 text-2xl'>{letters}</h1> */}
-      <div className='flex flex-row h-40 mt-16 mb-10'>{renderTiles()}</div>
+      <div className='flex flex-row h-40 mt-16 mb-10'>
+        {renderTiles()}
+        {renderPlaceholderTiles()}
+      </div>
       <form>
         <input
           className='my-3 p-2 border border-gray-800 rounded-sm'
