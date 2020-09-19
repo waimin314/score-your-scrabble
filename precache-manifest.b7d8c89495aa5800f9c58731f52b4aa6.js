@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "145c624ab03a52db180b340b67ca0e2f",
+    "revision": "75b7e2025e47c10845e8d6c1a767abc0",
     "url": "/score-your-scrabble/index.html"
   },
   {
-    "revision": "b7e17cfb13e55eed85ba",
+    "revision": "ba344e67ce4e365e037b",
     "url": "/score-your-scrabble/static/css/main.fe9c2f52.chunk.css"
   },
   {
-    "revision": "f9333e40dc1864acfd65",
-    "url": "/score-your-scrabble/static/js/2.a062469b.chunk.js"
+    "revision": "8adba13cd8e070548984",
+    "url": "/score-your-scrabble/static/js/2.32a47bd6.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/score-your-scrabble/static/js/2.a062469b.chunk.js.LICENSE.txt"
+    "url": "/score-your-scrabble/static/js/2.32a47bd6.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b7e17cfb13e55eed85ba",
-    "url": "/score-your-scrabble/static/js/main.86f6fda5.chunk.js"
+    "revision": "ba344e67ce4e365e037b",
+    "url": "/score-your-scrabble/static/js/main.e53382a8.chunk.js"
   },
   {
     "revision": "4bb1d22845f8a6b9872f",
