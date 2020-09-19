@@ -73,7 +73,8 @@ function App() {
   return (
     <div className='flex flex-col items-center '>
       {/* <h1 className='h-10 mt-10 text-2xl'>{letters}</h1> */}
-      <div className='flex flex-wrap flex-row h-auto mt-16 mb-10 justify-center max-w-sm  md:max-w-xl lg:max-w-full lg:flex-no-wrap'>
+      <h1 className='text-4xl mt-10 font-medium'>Score your scrabble</h1>
+      <div className='flex flex-wrap flex-row h-auto mt-10 mb-10 justify-center max-w-sm  md:max-w-xl lg:max-w-full lg:flex-no-wrap'>
         {renderTiles()}
         {renderPlaceholderTiles()}
       </div>
