@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { calculateScore } from './util/ScoreCalculator';
 import axios from 'axios';
+import { calculateScore } from './util/ScoreCalculator';
+import Tile from './components/Tile';
 
 function App() {
   const MAX_TILES = 10;
@@ -79,6 +80,7 @@ function App() {
           View All
         </button>
       </div>
+      <Tile letter='A' point={1}></Tile>
       <div className='block mx-auto mt-5'>{renderAllEntries()}</div>
     </div>
   );
