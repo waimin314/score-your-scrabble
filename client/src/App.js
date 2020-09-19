@@ -58,7 +58,7 @@ function App() {
           onChange={(e) => handleChange(e)}
         ></input>
       </form>
-      <h2>Score : {score}</h2>
+      <h1 className='text-2xl my-5'>Score : {score}</h1>
       <div className='flex space-x-5'>
         <button
           className='w-20 h-8 rounded-md bg-pink-700 text-white'
@@ -79,7 +79,7 @@ function App() {
           View All
         </button>
       </div>
-      <div>{renderAllEntries()}</div>
+      <div className='block mx-auto mt-5'>{renderAllEntries()}</div>
     </div>
   );
 }
