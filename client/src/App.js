@@ -3,6 +3,7 @@ import axios from 'axios';
 import { calculateScore, getPointOf } from './util/ScoreCalculator';
 import Tile from './components/Tile';
 import PlaceholderTile from './components/PlaceholderTile';
+import Alert from './components/Alert';
 
 function App() {
   const MAX_TILES = 10;
@@ -10,6 +11,8 @@ function App() {
   const [letters, setLetters] = useState('');
   const [score, setScore] = useState(0);
   const [allEntries, setAllEntries] = useState([]);
+  const [alertVisibility, setAlertVisibility] = useState('invisible');
+  const [alertInfo, setAlertInfo] = useState({ type: '', message: '' });
 
   const API = axios.create({ baseURL: BASE_URL });
 
@@ -41,10 +44,15 @@ function App() {
   };
 
   const saveEntry = () => {
-    API.post('entries', { word: letters, score }).then((res, err) => {
-      console.log(res);
-      console.log(res.data);
-    });
+    API.post('entries', { word: letters, score })
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+        displayAlert('Success', `Entry "${letters}" saved successfully.`);
+      })
+      .catch((err) => {
+        displayAlert('Error', err.response.data);
+      });
   };
 
   const getAllEntries = () => {
@@ -70,9 +78,17 @@ function App() {
     setScore(0);
   };
 
+  const displayAlert = (alertType, message) => {
+    setAlertInfo({ type: alertType, message });
+    setAlertVisibility('visible');
+    setTimeout(() => setAlertVisibility('invisible'), 3000);
+  };
+
   return (
-    <div className='flex flex-col items-center '>
-      {/* <h1 className='h-10 mt-10 text-2xl'>{letters}</h1> */}
+    <div className='flex flex-col items-center'>
+      <div className={`${alertVisibility} h-10`}>
+        <Alert alertType={alertInfo.type} message={alertInfo.message} />
+      </div>
       <h1 className='text-4xl mt-10 font-medium'>Score your scrabble</h1>
       <div className='flex flex-wrap flex-row h-auto mt-10 mb-10 justify-center max-w-sm  md:max-w-xl lg:max-w-full lg:flex-no-wrap'>
         {renderTiles()}
