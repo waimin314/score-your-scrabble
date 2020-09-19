@@ -65,6 +65,11 @@ function App() {
     });
   };
 
+  const clear = () => {
+    setLetters('');
+    setScore(0);
+  };
+
   return (
     <div className='flex flex-col items-center '>
       {/* <h1 className='h-10 mt-10 text-2xl'>{letters}</h1> */}
@@ -85,7 +90,7 @@ function App() {
       <div className='flex space-x-5'>
         <button
           className='w-20 h-8 rounded-md bg-pink-700 text-white'
-          onClick={() => setLetters('')}
+          onClick={clear}
         >
           Clear
         </button>
