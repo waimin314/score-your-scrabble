@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { calculateScore } from './util/ScoreCalculator';
+import { calculateScore, getPointOf } from './util/ScoreCalculator';
 import Tile from './components/Tile';
 
 function App() {
@@ -20,6 +20,12 @@ function App() {
     } else {
       console.log('Max Limit reached');
     }
+  };
+
+  const renderTiles = () => {
+    return letters.split('').map((letter) => {
+      return <Tile letter={letter} point={getPointOf(letter)} />;
+    });
   };
 
   const saveEntry = () => {
@@ -49,7 +55,8 @@ function App() {
 
   return (
     <div className='flex flex-col items-center '>
-      <h1 className='h-10 mt-10 text-2xl'>{letters}</h1>
+      {/* <h1 className='h-10 mt-10 text-2xl'>{letters}</h1> */}
+      <div className='flex flex-row h-40 mt-16 mb-10'>{renderTiles()}</div>
       <form>
         <input
           className='my-3 p-2 border border-gray-800 rounded-sm'
@@ -80,7 +87,6 @@ function App() {
           View All
         </button>
       </div>
-      <Tile letter='A' point={1}></Tile>
       <div className='block mx-auto mt-5'>{renderAllEntries()}</div>
     </div>
   );

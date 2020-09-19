@@ -27,4 +27,4 @@ const calculateScore = (word) => {
   return score;
 };
 
-export { calculateScore };
+export { calculateScore, getPointOf };
