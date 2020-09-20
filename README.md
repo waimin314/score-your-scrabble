@@ -4,15 +4,21 @@ This project calculates your score based on the word you entered. You can save y
 
 ![Demo](demo.gif)
 
-### `npm run dev`
+### Setup 
+1. Rename `config.env-sample` to `config.env`
+2. Write your mongodb uri at `MONGO_URI`
+
+### Running
+
+#### `npm run dev`
 
 Runs the app (both frontend and backend simultaneously) in the development mode.<br />
 Client will be running at __localhost:3000__ and server will be running at __localhost:5000__
 
-### `npm test`
+#### `npm test`
 
 Launches the test runner in the interactive watch mode.<br />
 
-### `npm run build`
+#### `npm run build`
 
 Builds the app for production to the `build` folder.<br />
