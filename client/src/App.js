@@ -22,7 +22,7 @@ function App() {
       setLetters(word);
       setScore(calculateScore(word));
     } else {
-      console.log('Max Limit reached');
+      displayAlert('Error', 'Max letter length reached');
     }
   };
 
