@@ -19,8 +19,10 @@ function App() {
   const handleInputChange = (e) => {
     if (e.target.value.length <= MAX_TILES) {
       let word = e.target.value.toUpperCase();
-      setLetters(word);
-      setScore(calculateScore(word));
+      if (word.match(/^[A-Za-z]*$/)) {
+        setLetters(word);
+        setScore(calculateScore(word));
+      }
     } else {
       displayAlert('Error', 'Max letter length reached');
     }
