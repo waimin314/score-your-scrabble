@@ -51,7 +51,11 @@ function App() {
         displayAlert('Success', `Entry "${letters}" saved successfully.`);
       })
       .catch((err) => {
-        displayAlert('Error', err.response.data);
+        if (err.response) {
+          displayAlert('Error', err.response.data);
+        } else {
+          displayAlert('Error', err.toString());
+        }
       });
   };
 
