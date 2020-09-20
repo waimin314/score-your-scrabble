@@ -7,6 +7,7 @@ const MongoClient = require('mongodb').MongoClient;
 const words = checkWord('en');
 const DB_NAME = 'Scrabble';
 const COLLECTION_NAME = 'Entries';
+const MAX_WORDS = 15;
 let allEntries = undefined;
 
 dotenv.config({ path: './config/config.env' });
@@ -60,9 +61,17 @@ app.post('/entries', (req, res) => {
     .catch((err) => {
       console.log(`Error adding to Database. ${err.message}`);
     });
-
+  if (allEntries.length > MAX_WORDS) deleteFirstEntry();
   res.sendStatus(201);
 });
+
+const deleteFirstEntry = () => {
+  const entry = allEntries.shift();
+  client
+    .db(DB_NAME)
+    .collection(COLLECTION_NAME)
+    .deleteOne({ word: entry.word });
+};
 
 const entryExists = (word) => {
   let tmp = false;
