@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { calculateScore } from './../util/ScoreCalculator';
 import Tiles from './../components/Tiles';
 import Alert from './../components/Alert';
@@ -8,7 +9,6 @@ export default function MainPage() {
   const MAX_TILES = 10;
   const [letters, setLetters] = useState('');
   const [score, setScore] = useState(0);
-  const [allEntries, setAllEntries] = useState([]);
   const [alertVisibility, setAlertVisibility] = useState('invisible');
   const [alertInfo, setAlertInfo] = useState({ type: '', message: '' });
 
@@ -30,21 +30,6 @@ export default function MainPage() {
       score,
     });
     displayAlert(alertType, message);
-  };
-
-  const getAll = async () => {
-    const entries = await getAllEntries();
-    setAllEntries(entries);
-  };
-
-  const renderAllEntries = () => {
-    return allEntries.map((entry) => {
-      return (
-        <li>
-          {entry.word} : {entry.score}
-        </li>
-      );
-    });
   };
 
   const clear = () => {
@@ -88,12 +73,11 @@ export default function MainPage() {
         >
           Save
         </button>
-        <button
-          className='w-20 h-8 rounded-md bg-indigo-700 text-white'
-          onClick={getAll}
-        >
-          View All
-        </button>
+        <Link to='view-all'>
+          <button className='w-20 h-8 rounded-md bg-indigo-700 text-white'>
+            View All
+          </button>
+        </Link>
       </div>
       <div className='block mx-auto mt-5'>{renderAllEntries()}</div>
     </div>
