@@ -6,27 +6,14 @@ import ViewAllPage from './pages/ViewAllPage';
 function App() {
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to='/'>Home</Link>
-            </li>
-            <li>
-              <Link to='/view-all'>View All</Link>
-            </li>
-          </ul>
-        </nav>
-
-        <Switch>
-          <Route path='/view-all'>
-            <ViewAllPage />
-          </Route>
-          <Route path='/'>
-            <MainPage />
-          </Route>
-        </Switch>
-      </div>
+      <Switch>
+        <Route path='/view-all'>
+          <ViewAllPage />
+        </Route>
+        <Route path='/'>
+          <MainPage />
+        </Route>
+      </Switch>
     </Router>
   );
 }

@@ -79,7 +79,6 @@ export default function MainPage() {
           </button>
         </Link>
       </div>
-      <div className='block mx-auto mt-5'>{renderAllEntries()}</div>
     </div>
   );
 }
