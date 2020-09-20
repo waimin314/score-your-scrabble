@@ -1,8 +1,10 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const checkWord = require('check-if-word');
 const MongoClient = require('mongodb').MongoClient;
 
+const words = checkWord('en');
 const DB_NAME = 'Scrabble';
 const COLLECTION_NAME = 'Entries';
 let allEntries = undefined;
@@ -37,6 +39,12 @@ app.get('/entries', (req, res) => {
 
 app.post('/entries', (req, res) => {
   console.log(req.body);
+  if (!req.body.word) {
+    return res.status(400).send('Empty content');
+  }
+  if (!words.check(req.body.word)) {
+    return res.status(400).send(`${req.body.word} is not a valid word`);
+  }
   client
     .db(DB_NAME)
     .collection(COLLECTION_NAME)
