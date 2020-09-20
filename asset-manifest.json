@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/score-your-scrabble/static/css/main.fe9c2f52.chunk.css",
-    "main.js": "/score-your-scrabble/static/js/main.dd310e10.chunk.js",
-    "main.js.map": "/score-your-scrabble/static/js/main.dd310e10.chunk.js.map",
+    "main.js": "/score-your-scrabble/static/js/main.0437164f.chunk.js",
+    "main.js.map": "/score-your-scrabble/static/js/main.0437164f.chunk.js.map",
     "runtime-main.js": "/score-your-scrabble/static/js/runtime-main.400965b6.js",
     "runtime-main.js.map": "/score-your-scrabble/static/js/runtime-main.400965b6.js.map",
-    "static/js/2.32a47bd6.chunk.js": "/score-your-scrabble/static/js/2.32a47bd6.chunk.js",
-    "static/js/2.32a47bd6.chunk.js.map": "/score-your-scrabble/static/js/2.32a47bd6.chunk.js.map",
+    "static/js/2.6b083134.chunk.js": "/score-your-scrabble/static/js/2.6b083134.chunk.js",
+    "static/js/2.6b083134.chunk.js.map": "/score-your-scrabble/static/js/2.6b083134.chunk.js.map",
     "index.html": "/score-your-scrabble/index.html",
-    "precache-manifest.4fd99ee5beb0a85a2d474f8dc357eda3.js": "/score-your-scrabble/precache-manifest.4fd99ee5beb0a85a2d474f8dc357eda3.js",
+    "precache-manifest.157c2db2d82af606a78989958236a90a.js": "/score-your-scrabble/precache-manifest.157c2db2d82af606a78989958236a90a.js",
     "service-worker.js": "/score-your-scrabble/service-worker.js",
     "static/css/main.fe9c2f52.chunk.css.map": "/score-your-scrabble/static/css/main.fe9c2f52.chunk.css.map",
-    "static/js/2.32a47bd6.chunk.js.LICENSE.txt": "/score-your-scrabble/static/js/2.32a47bd6.chunk.js.LICENSE.txt"
+    "static/js/2.6b083134.chunk.js.LICENSE.txt": "/score-your-scrabble/static/js/2.6b083134.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.400965b6.js",
-    "static/js/2.32a47bd6.chunk.js",
+    "static/js/2.6b083134.chunk.js",
     "static/css/main.fe9c2f52.chunk.css",
-    "static/js/main.dd310e10.chunk.js"
+    "static/js/main.0437164f.chunk.js"
   ]
 }
