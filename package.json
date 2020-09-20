@@ -4,10 +4,10 @@
   "description": "Backend server for score-your-scrabble",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\" ",
-    "build": "npm run build --prefix client"
+    "dev": "concurrently \"npm run server\" \"npm run client\" "
   },
   "repository": {
     "type": "git",
