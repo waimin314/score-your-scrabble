@@ -7,9 +7,9 @@ export default function Alert({ alertType, message }) {
       : 'bg-red-100 border-red-400 text-red-700';
 
   return (
-    <div className={`border ${color} px-4 py-3 rounded relative mt-3`}>
+    <div className={`border ${color} px-4 py-3 rounded relative`}>
       <strong className='font-bold'>{alertType}! </strong>
-      <span className='block sm:inline'> {message}</span>
+      <span className='inline'> {message}</span>
     </div>
   );
 }

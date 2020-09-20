@@ -92,11 +92,11 @@ function App() {
 
   return (
     <div className='flex flex-col items-center'>
-      <div className={`${alertVisibility} h-5 md:h-10`}>
+      <h1 className='text-4xl mt-3 font-medium md:mt-5'>Score your scrabble</h1>
+      <div className={`${alertVisibility} h-5`}>
         <Alert alertType={alertInfo.type} message={alertInfo.message} />
       </div>
-      <h1 className='text-4xl mt-3 font-medium md:mt-5'>Score your scrabble</h1>
-      <div className='flex flex-wrap flex-row h-auto  my-5 justify-center max-w-sm md:my-10 md:max-w-xl lg:max-w-full lg:flex-no-wrap'>
+      <div className='flex flex-wrap flex-row h-auto  my-5 justify-center max-w-sm md:my-8 md:max-w-xl lg:max-w-full lg:flex-no-wrap'>
         {renderTiles()}
         {renderPlaceholderTiles()}
       </div>
