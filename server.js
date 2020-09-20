@@ -39,11 +39,15 @@ app.get('/entries', (req, res) => {
 
 app.post('/entries', (req, res) => {
   console.log(req.body);
-  if (!req.body.word) {
+  const word = req.body.word;
+  if (!word) {
     return res.status(400).send('Empty content');
   }
-  if (!words.check(req.body.word)) {
-    return res.status(400).send(`${req.body.word} is not a valid word`);
+  if (entryExists(word)) {
+    return res.status(400).send(`${word} already exists`);
+  }
+  if (!words.check(word)) {
+    return res.status(400).send(`${word} is not a valid word`);
   }
   client
     .db(DB_NAME)
@@ -59,6 +63,17 @@ app.post('/entries', (req, res) => {
 
   res.sendStatus(201);
 });
+
+const entryExists = (word) => {
+  let tmp = false;
+  allEntries.forEach((entry) => {
+    if (entry.word == word) {
+      tmp = true;
+      return;
+    }
+  });
+  return tmp;
+};
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
