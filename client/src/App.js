@@ -16,7 +16,7 @@ function App() {
 
   const API = axios.create({ baseURL: BASE_URL });
 
-  const handleChange = (e) => {
+  const handleInputChange = (e) => {
     if (e.target.value.length <= MAX_TILES) {
       let word = e.target.value.toUpperCase();
       setLetters(word);
@@ -104,7 +104,7 @@ function App() {
           type='text'
           value={letters}
           autoFocus
-          onChange={(e) => handleChange(e)}
+          onChange={(e) => handleInputChange(e)}
         ></input>
       </form>
       <h1 className='text-2xl my-5'>Score : {score}</h1>
