@@ -12,6 +12,10 @@ let allEntries = undefined;
 
 dotenv.config({ path: './config/config.env' });
 
+const app = express();
+
+app.use(cors());
+
 const client = new MongoClient(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -29,9 +33,6 @@ client.connect((err) => {
     .then((results) => (allEntries = results));
 });
 
-const app = express();
-
-app.use(cors());
 app.use(express.json());
 
 app.get('/entries', (req, res) => {
