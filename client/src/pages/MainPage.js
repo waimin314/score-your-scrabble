@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { calculateScore } from './../util/ScoreCalculator';
 import Tiles from './../components/Tiles';
 import Alert from './../components/Alert';
+import { getAllEntries, saveEntry } from './../util/API';
 
 export default function MainPage() {
   const MAX_TILES = 10;
-  const BASE_URL = 'http://localhost:5000/';
   const [letters, setLetters] = useState('');
   const [score, setScore] = useState(0);
   const [allEntries, setAllEntries] = useState([]);
   const [alertVisibility, setAlertVisibility] = useState('invisible');
   const [alertInfo, setAlertInfo] = useState({ type: '', message: '' });
-
-  const API = axios.create({ baseURL: BASE_URL });
 
   const handleInputChange = (e) => {
     if (e.target.value.length <= MAX_TILES) {
@@ -27,32 +24,21 @@ export default function MainPage() {
     }
   };
 
-  const saveEntry = () => {
-    API.post('entries', { word: letters, score })
-      .then((res) => {
-        console.log(res);
-        console.log(res.data);
-        displayAlert('Success', `Entry "${letters}" saved successfully.`);
-      })
-      .catch((err) => {
-        if (err.response) {
-          displayAlert('Error', err.response.data);
-        } else {
-          displayAlert('Error', err.toString());
-        }
-      });
+  const save = async () => {
+    let { alertType, message } = await saveEntry({
+      letters,
+      score,
+    });
+    displayAlert(alertType, message);
   };
 
-  const getAllEntries = () => {
-    API.get('entries').then((res, err) => {
-      console.log(res.data);
-      setAllEntries(res.data);
-    });
+  const getAll = async () => {
+    const entries = await getAllEntries();
+    setAllEntries(entries);
   };
 
   const renderAllEntries = () => {
     return allEntries.map((entry) => {
-      console.log(`${entry.word} : ${entry.score}`);
       return (
         <li>
           {entry.word} : {entry.score}
@@ -98,13 +84,13 @@ export default function MainPage() {
         </button>
         <button
           className='w-20 h-8 rounded-md bg-indigo-700 text-white'
-          onClick={saveEntry}
+          onClick={save}
         >
           Save
         </button>
         <button
           className='w-20 h-8 rounded-md bg-indigo-700 text-white'
-          onClick={getAllEntries}
+          onClick={getAll}
         >
           View All
         </button>
