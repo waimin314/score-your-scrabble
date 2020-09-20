@@ -11,6 +11,9 @@ export default function ViewAll() {
     fetchEntries();
   }, []);
   const renderTable = () => {
+    if (!Array.isArray(entries)) {
+      return <h1 className='text-xl text-red-400'>{entries.message}</h1>;
+    }
     return entries.map(({ word, score }, index) => {
       const color = index % 2 === 0 ? 'bg-white' : 'bg-gray-300';
       return (
@@ -23,7 +26,7 @@ export default function ViewAll() {
   };
   return (
     <div className='flex flex-col justify-center items-center'>
-      <div className='flex justify-center my-5 overflow-scroll h-auto'>
+      <div className='flex justify-center my-5 h-auto overflow-y-auto'>
         <table className='table-fixed'>
           <thead>
             <tr className='bg-teal-300 text-gray-800'>

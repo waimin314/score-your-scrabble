@@ -1,16 +1,16 @@
 import axios from 'axios';
 
 const BASE_URL = process.env.SERVER_URL || 'http://localhost:5000/';
-// const BASE_URL = 'https://stormy-mesa-70307.herokuapp.com/';
+// const BASE_URL = 'https://stormy-mesa-70307.herokuapp/';
 const API = axios.create({ baseURL: BASE_URL });
 
 const getAllEntries = async () => {
   try {
     const res = await API.get('entries');
     return res.data;
-  } catch (err) {}
-
-  return null;
+  } catch (err) {
+    return { alertType: 'Error', message: `${err.message} at ${BASE_URL}` };
+  }
 };
 
 const saveEntry = async ({ letters, score }) => {
