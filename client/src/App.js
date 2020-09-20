@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { calculateScore, getPointOf } from './util/ScoreCalculator';
-import Tile from './components/Tile';
-import PlaceholderTile from './components/PlaceholderTile';
+import { calculateScore } from './util/ScoreCalculator';
+import Tiles from './components/Tiles';
 import Alert from './components/Alert';
 
 function App() {
@@ -26,23 +25,6 @@ function App() {
     } else {
       displayAlert('Error', 'Max letter length reached');
     }
-  };
-
-  const renderTiles = () => {
-    return letters.split('').map((letter) => {
-      return <Tile letter={letter} point={getPointOf(letter)} />;
-    });
-  };
-
-  const renderPlaceholderTiles = () => {
-    let tmpTiles = [];
-    let numTilesToRender = MAX_TILES - letters.length;
-
-    for (let i = 0; i < numTilesToRender; i++) {
-      tmpTiles.push(<PlaceholderTile />);
-    }
-
-    return tmpTiles;
   };
 
   const saveEntry = () => {
@@ -96,10 +78,7 @@ function App() {
       <div className={`${alertVisibility} h-5`}>
         <Alert alertType={alertInfo.type} message={alertInfo.message} />
       </div>
-      <div className='flex flex-wrap flex-row h-auto  my-5 justify-center max-w-sm md:my-8 md:max-w-xl lg:max-w-full lg:flex-no-wrap'>
-        {renderTiles()}
-        {renderPlaceholderTiles()}
-      </div>
+      <Tiles letters={letters} maxLen={MAX_TILES} />
       <form>
         <input
           className='my-3 p-2 border border-gray-800 rounded-sm'
