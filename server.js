@@ -35,6 +35,12 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/entries', (req, res) => {
+  client
+    .db(DB_NAME)
+    .collection(COLLECTION_NAME)
+    .find()
+    .toArray()
+    .then((results) => (allEntries = results));
   res.json(allEntries);
 });
 
