@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/score-your-scrabble/static/css/main.fe9c2f52.chunk.css",
-    "main.js": "/score-your-scrabble/static/js/main.e53382a8.chunk.js",
-    "main.js.map": "/score-your-scrabble/static/js/main.e53382a8.chunk.js.map",
+    "main.js": "/score-your-scrabble/static/js/main.7f3da5a2.chunk.js",
+    "main.js.map": "/score-your-scrabble/static/js/main.7f3da5a2.chunk.js.map",
     "runtime-main.js": "/score-your-scrabble/static/js/runtime-main.400965b6.js",
     "runtime-main.js.map": "/score-your-scrabble/static/js/runtime-main.400965b6.js.map",
     "static/js/2.32a47bd6.chunk.js": "/score-your-scrabble/static/js/2.32a47bd6.chunk.js",
     "static/js/2.32a47bd6.chunk.js.map": "/score-your-scrabble/static/js/2.32a47bd6.chunk.js.map",
     "index.html": "/score-your-scrabble/index.html",
-    "precache-manifest.b7d8c89495aa5800f9c58731f52b4aa6.js": "/score-your-scrabble/precache-manifest.b7d8c89495aa5800f9c58731f52b4aa6.js",
+    "precache-manifest.ed1e4950d2569944e4ccd454bcf6facf.js": "/score-your-scrabble/precache-manifest.ed1e4950d2569944e4ccd454bcf6facf.js",
     "service-worker.js": "/score-your-scrabble/service-worker.js",
     "static/css/main.fe9c2f52.chunk.css.map": "/score-your-scrabble/static/css/main.fe9c2f52.chunk.css.map",
     "static/js/2.32a47bd6.chunk.js.LICENSE.txt": "/score-your-scrabble/static/js/2.32a47bd6.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.400965b6.js",
     "static/js/2.32a47bd6.chunk.js",
     "static/css/main.fe9c2f52.chunk.css",
-    "static/js/main.e53382a8.chunk.js"
+    "static/js/main.7f3da5a2.chunk.js"
   ]
 }
