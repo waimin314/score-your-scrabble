@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = process.env.SERVER_URL || 'http://localhost:5000/';
+const BASE_URL = process.env.REACT_APP_SERVER_URL || 'http://localhost:5000/';
 // const BASE_URL = 'https://stormy-mesa-70307.herokuapp/';
 const API = axios.create({ baseURL: BASE_URL });
 
