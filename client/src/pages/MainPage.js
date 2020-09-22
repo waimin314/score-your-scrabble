@@ -50,6 +50,7 @@ export default function MainPage() {
         <Alert alertType={alertInfo.type} message={alertInfo.message} />
       </div>
       <Tiles letters={letters} maxLen={MAX_TILES} />
+      <h1 className='text-2xl'>Score : {score}</h1>
       <form>
         <input
           className='my-3 p-2 border border-gray-800 rounded-sm'
@@ -59,7 +60,6 @@ export default function MainPage() {
           onChange={(e) => handleInputChange(e)}
         ></input>
       </form>
-      <h1 className='text-2xl my-5'>Score : {score}</h1>
       <div className='flex space-x-5'>
         <button
           className='w-20 h-8 rounded-md bg-pink-700 text-white'
