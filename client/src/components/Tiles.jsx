@@ -21,7 +21,7 @@ export default function Tiles({ letters, maxLen }) {
     return tmpTiles;
   };
   return (
-    <div className='flex flex-wrap flex-row h-auto  my-1 justify-center max-w-sm md:my-8 md:max-w-xl lg:max-w-full lg:flex-no-wrap'>
+    <div className='flex flex-wrap flex-row h-auto my-1 justify-center max-w-sm md:my-8 md:max-w-xl lg:max-w-full lg:flex-no-wrap'>
       {renderTiles()}
       {renderPlaceholderTiles()}
     </div>

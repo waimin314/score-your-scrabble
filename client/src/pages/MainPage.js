@@ -11,6 +11,7 @@ export default function MainPage() {
   const [score, setScore] = useState(0);
   const [alertVisibility, setAlertVisibility] = useState('invisible');
   const [alertInfo, setAlertInfo] = useState({ type: '', message: '' });
+  const [inputWiggle, setInputWiggle] = useState('');
 
   const handleInputChange = (e) => {
     if (e.target.value.length <= MAX_TILES) {
@@ -20,6 +21,7 @@ export default function MainPage() {
         setScore(calculateScore(word));
       }
     } else {
+      wiggleInput();
       displayAlert('Error', 'Max letter length reached');
     }
   };
@@ -29,6 +31,7 @@ export default function MainPage() {
       letters,
       score,
     });
+    if (alertType === 'Error') wiggleInput();
     displayAlert(alertType, message);
   };
 
@@ -46,6 +49,13 @@ export default function MainPage() {
     setAlertInfo({ type: alertType, message });
     setAlertVisibility('visible');
     setTimeout(() => setAlertVisibility('invisible'), 3000);
+  };
+
+  const wiggleInput = () => {
+    setInputWiggle('animate-wiggle');
+    setTimeout(() => {
+      setInputWiggle('');
+    }, 500);
   };
 
   return (
@@ -68,7 +78,7 @@ export default function MainPage() {
         className='flex justify-center w-full px-8 mb-3 md:mb-5'
       >
         <input
-          className='my-3 p-2 w-full border border-gray-800 rounded-sm md:w-56'
+          className={`my-3 p-2 w-full border border-gray-800 rounded-sm ${inputWiggle} md:w-56`}
           type='text'
           value={letters}
           autoFocus

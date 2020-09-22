@@ -9,6 +9,21 @@ module.exports = {
   important: false,
   separator: ':',
   theme: {
+    extend: {
+      animation: {
+        wiggle: 'wiggle 0.3s',
+      },
+      keyframes: {
+        wiggle: {
+          '0%': { transform: 'translateX(3rem)' },
+          '20%': { transform: 'translateX(-2rem)' },
+          '60%': { transform: 'translateX(1rem)' },
+          '80%': { transform: 'translateX(-0.5rem)' },
+          '90%': { transform: 'translateX(0.25rem)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+      },
+    },
     screens: {
       sm: '640px',
       md: '768px',
@@ -789,6 +804,7 @@ module.exports = {
     scale: ['responsive', 'hover', 'focus'],
     rotate: ['responsive', 'hover', 'focus'],
     translate: ['responsive', 'hover', 'focus'],
+    translateX: ['responsive'],
     skew: ['responsive', 'hover', 'focus'],
     transitionProperty: ['responsive'],
     transitionTimingFunction: ['responsive'],
