@@ -38,7 +38,7 @@ export default function ViewAll() {
         </table>
       </div>
       <Link to='/'>
-        <button className='w-20 h-8 rounded-md bg-pink-700 text-white'>
+        <button className='w-24 h-10 rounded-md bg-gradient-to-br from-pink-700 to-pink-600 text-white shadow-lg'>
           Back
         </button>
       </Link>

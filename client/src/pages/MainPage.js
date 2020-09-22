@@ -53,7 +53,7 @@ export default function MainPage() {
       <div className='flex space-x-10 mt-5 mb-3'>
         <h1 className='text-2xl'>Score : {score}</h1>
         <Link to='view-all'>
-          <button className='w-24 h-10 rounded-md bg-indigo-700 text-white text-xl'>
+          <button className='w-24 h-10 rounded-md bg-gradient-to-br from-indigo-700 to-indigo-600 text-white text-xl shadow-lg'>
             View All
           </button>
         </Link>
@@ -69,13 +69,13 @@ export default function MainPage() {
       </form>
       <div className='flex space-x-8'>
         <button
-          className='w-24 h-10 rounded-md bg-pink-700 text-white text-xl'
+          className='w-24 h-10 rounded-md bg-gradient-to-br from-pink-700 to-pink-600 text-white text-xl shadow-lg'
           onClick={clear}
         >
           Clear
         </button>
         <button
-          className='w-24 h-10 rounded-md bg-indigo-700 text-white text-xl'
+          className='w-24 h-10 rounded-md bg-gradient-to-br from-indigo-700 to-indigo-600 text-white text-xl shadow-lg'
           onClick={save}
         >
           Save
