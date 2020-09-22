@@ -50,34 +50,36 @@ export default function MainPage() {
         <Alert alertType={alertInfo.type} message={alertInfo.message} />
       </div>
       <Tiles letters={letters} maxLen={MAX_TILES} />
-      <h1 className='text-2xl'>Score : {score}</h1>
-      <form>
+      <div className='flex space-x-10 mt-5 mb-3'>
+        <h1 className='text-2xl'>Score : {score}</h1>
+        <Link to='view-all'>
+          <button className='w-24 h-10 rounded-md bg-indigo-700 text-white text-xl'>
+            View All
+          </button>
+        </Link>
+      </div>
+      <form className='mb-3 md:mb-5'>
         <input
-          className='my-3 p-2 border border-gray-800 rounded-sm'
+          className='my-3 p-2 w-56 border border-gray-800 rounded-sm'
           type='text'
           value={letters}
           autoFocus
           onChange={(e) => handleInputChange(e)}
         ></input>
       </form>
-      <div className='flex space-x-5'>
+      <div className='flex space-x-8'>
         <button
-          className='w-20 h-8 rounded-md bg-pink-700 text-white'
+          className='w-24 h-10 rounded-md bg-pink-700 text-white text-xl'
           onClick={clear}
         >
           Clear
         </button>
         <button
-          className='w-20 h-8 rounded-md bg-indigo-700 text-white'
+          className='w-24 h-10 rounded-md bg-indigo-700 text-white text-xl'
           onClick={save}
         >
           Save
         </button>
-        <Link to='view-all'>
-          <button className='w-20 h-8 rounded-md bg-indigo-700 text-white'>
-            View All
-          </button>
-        </Link>
       </div>
     </div>
   );
