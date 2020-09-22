@@ -50,7 +50,7 @@ export default function MainPage() {
         <Alert alertType={alertInfo.type} message={alertInfo.message} />
       </div>
       <Tiles letters={letters} maxLen={MAX_TILES} />
-      <div className='flex space-x-10 mt-5 mb-3'>
+      <div className='flex justify-between px-8 w-full space-x-10 mt-5 mb-3 md:w-auto md:justify-around'>
         <h1 className='text-2xl'>Score : {score}</h1>
         <Link to='view-all'>
           <button className='w-24 h-10 rounded-md bg-gradient-to-br from-indigo-700 to-indigo-600 text-white text-xl shadow-lg'>
@@ -58,16 +58,16 @@ export default function MainPage() {
           </button>
         </Link>
       </div>
-      <form className='mb-3 md:mb-5'>
+      <form className='flex justify-center w-full px-8 mb-3 md:mb-5'>
         <input
-          className='my-3 p-2 w-56 border border-gray-800 rounded-sm'
+          className='my-3 p-2 w-full border border-gray-800 rounded-sm md:w-56'
           type='text'
           value={letters}
           autoFocus
           onChange={(e) => handleInputChange(e)}
         ></input>
       </form>
-      <div className='flex space-x-8'>
+      <div className='flex justify-between w-full px-8 space-x-8 md:w-auto  md:justify-around'>
         <button
           className='w-24 h-10 rounded-md bg-gradient-to-br from-pink-700 to-pink-600 text-white text-xl shadow-lg'
           onClick={clear}
