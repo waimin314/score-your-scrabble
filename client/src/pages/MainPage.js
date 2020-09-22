@@ -32,6 +32,11 @@ export default function MainPage() {
     displayAlert(alertType, message);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    save();
+  };
+
   const clear = () => {
     setLetters('');
     setScore(0);
@@ -58,7 +63,10 @@ export default function MainPage() {
           </button>
         </Link>
       </div>
-      <form className='flex justify-center w-full px-8 mb-3 md:mb-5'>
+      <form
+        onSubmit={(e) => handleSubmit(e)}
+        className='flex justify-center w-full px-8 mb-3 md:mb-5'
+      >
         <input
           className='my-3 p-2 w-full border border-gray-800 rounded-sm md:w-56'
           type='text'
