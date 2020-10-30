@@ -11,6 +11,20 @@ export default function ViewAll() {
     fetchEntries();
   }, []);
   const renderTable = () => {
+
+    if (entries.length===0){
+      const arr = []
+      for(let i=0;i<15;i++){
+        arr.push(      <tr className=''>
+        <td className='animate-pulse bg-gray-600 border border-gray-700 px-4 py-2 h-10'></td>
+        <td className='animate-pulse bg-gray-600 border border-gray-700 px-4 py-2 h-10'><div className='bg-gray-600 w-10'></div></td>
+      </tr>)
+      }
+      return (<div className='flex my-2' >
+        <div class="animate-spin mx-2 border-r-0 border-b-0 border-t-0 w-5 h-5 border-4 border-teal-600 rounded-full"></div> Loading...</div>)     
+    }
+    else {
+
     if (!Array.isArray(entries)) {
       return <h1 className='text-xl text-red-400'>{entries.message}</h1>;
     }
@@ -23,7 +37,8 @@ export default function ViewAll() {
         </tr>
       );
     });
-  };
+  }
+};
   return (
     <div className='flex flex-col justify-center items-center'>
       <div className='flex justify-center my-5 h-auto overflow-y-auto'>
